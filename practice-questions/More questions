@@ -1,0 +1,61 @@
+Domain — Essential Commands
+Q1 — Open the file under home/student/textreferences/editme.txt and complete the following tasks:
+1. Move line 777 to line 1
+2. Remove line 7000. 
+3. Replace every occurrence of the word "Earth" shown with an uppercase E, with the word "Globe"
+4. Add a new line at the very end of the document that contains "Auctores Varii"
+Solution:
+Since I don’t have a practice edit.txt file for this case, I will create one first:
+
+The best practice is to use ed or sedfor any move and replace operation in Linux:
+
+Q2 — Working with archives and compressed files is an integral part of the System Administrator’s job. Perform the following tasks to demonstrate your ability to work with archives and compressed files:
+ 1. Extract all files from archive file /opt/SAMPLE001.zip into target directory /opt/SAMPLE001
+2. Create a tar archive file /opt/SAMPLE0001.tar containing all files in the directory /opt/SAMPLE001 
+3. Compress the tar archive file /opt/SAMPLE0001.tar using the bzip2 compression algorithm 
+4. Compress the tar archive file /opt/SAMPLE0001.tar using the xz compression algorithm 
+Make sure that the uncompressed archive file /opt/SAMPLE0001.tar is not removed after creating the compressed versions of the archive file!
+Solution:
+
+Domain — Operation of Running Systems
+Q1 — Create a bash shell script named certscript.sh under /home/student/apps/
+1. Make sure the script can be invoked as ./certscript.sh
+2. The first line of output from the script should consist of the name of the user who invoked it.
+3. The second line of output should contain the IP address of the default gateway.
+Solution:
+We will test it out first with a few examples and after that create our script and update the permissions to make it executable
+
+Let’s create certscript.sh with these findings in mind:
+
+Make it executable by changing permissions and run it for testing:
+
+Q2 — Create a cron job that kills all processes named scan_filesystemwhich is owned by root, every minute.
+Solution:
+
+To check your cron job logs, enter:
+tail -f /var/log/syslog
+man crontab gives you a detailed information on how to use the command but it doesn’t provide any useful examples. using man 5 crontab documentation manual can definitely save you day with a lot of useful examples and use cases.
+Domain — User & Group Management
+Q1 — Create a candidate user account with the password cert456. Modify the sudo configuration to let the candidate account access root privileges with no password prompt.
+Solution:
+
+Q2 — Configure the system so that an empty NEWS file is automatically created in the home directory of any new user.
+Solution:
+
+Q3 — Create a new user account with the following attributes:
+- Username is harry. 
+- Password is magic. 
+- This user’s home directory is defined as /home/school/harry/
+- This new user is a member of the existing students group
+- The /home/school/harry/binaries/ directory is part of the PATH variable.
+Solution:
+
+Domain — Networking
+Q1 — Find ports under /etc/services
+1. Find the name of the service which uses TCP port 2605, as documented in /etc/services, and write the service name to the file /home/student/port-2605.txt.
+2. Find all the ports used for TCP services IMAP3 and IMAPS, again as documented in /etc/services, and write those port numbers to the file /home/student/imap-ports.txt
+Solution:
+
+Conclusion
+Service Configuration and Storage Management domains are also very important as you may expect around 30–35% of the tasks from these two, but this post is already long enough to cover all the tasks with detailed solutions of the practice questions. 
+I will cover the other questions in the pdf in part-2 of this study guide. Please feel free to ask me any questions and follow me for getting part-2 of this post when it is released.
